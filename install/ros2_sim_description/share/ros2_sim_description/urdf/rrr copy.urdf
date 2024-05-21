@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- =================================================================================== -->
+<!-- |    URDF file for the RRR (3R) Robot                                             | -->
+<!-- =================================================================================== -->
+
+<robot name="rrr_description">
+
+<!-- ================================= -->
+<!-- |  INERTIAL PROPERTIES - LINKS  | -->
+<!-- ================================= -->
+
+    <link name="world"/>
+
+    <link name="rrr_base">
+        <visual>
+            <geometry>
+            <box size="0.4 0.4 0.4"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="rrr_link1">
+        <visual>
+            <origin xyz="0 0 0.6" rpy="0 0 0"/>
+            <geometry>
+            <cylinder length="1.0" radius="0.1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="rrr_link2">
+        <visual>
+            <origin xyz="0 0 0.6" rpy="0 0 0"/>
+            <geometry>
+            <cylinder length="1.0" radius="0.1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="rrr_link3">
+        <visual>
+            <origin xyz="0 0 0.6" rpy="0 0 0"/>
+            <geometry>
+            <cylinder length="1.0" radius="0.1"/>
+            </geometry>
+        </visual>
+    </link>
+
+  
+    <link name="rrr_end_effector">
+        <visual>
+            <origin xyz="0 0 0.005" rpy="0 0 0"/>
+            <geometry>
+            <sphere radius="0.1"/>
+            </geometry>
+        </visual>
+    </link>
+
+<!-- =================================== -->
+<!-- |  KINEMATIC PROPERTIES - JOINTS  | -->
+<!-- =================================== -->
+
+    <joint name="robot_to_world" type="fixed">
+        <parent link="world"/>
+        <child link="rrr_base"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.1"/>
+    </joint>
+
+    <joint name="rrr_joint1" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0.0"/>
+        <parent link="rrr_base"/>
+        <child link="rrr_link1"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
+    </joint>
+
+    <joint name="rrr_joint2" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 1.1"/>
+        <parent link="rrr_link1"/>
+        <child link="rrr_link2"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
+    </joint>
+
+    <joint name="rrr_joint3" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 1.1"/>
+        <parent link="rrr_link2"/>
+        <child link="rrr_link3"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
+    </joint>
+
+    <joint name="rrr_joint4" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 1.2"/>
+        <parent link="rrr_link3"/>
+        <child link="rrr_end_effector"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+</robot>

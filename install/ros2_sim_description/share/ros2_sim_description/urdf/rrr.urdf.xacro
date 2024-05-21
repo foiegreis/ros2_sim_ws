@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<robot name="rrr_description" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Define default materials -->
+  <xacro:property name="default_material" value="Gray"/>
+  
+  <!-- Define properties for reuse -->
+  <xacro:property name="link_mass" value="1.0"/>
+  <xacro:property name="link_radius" value="0.1"/>
+  <xacro:property name="link_length" value="1.0"/>
+  <xacro:property name="effort_limit" value="87"/>
+  <xacro:property name="velocity_limit" value="2.175"/>
+  <xacro:property name="joint_damping" value="0.0"/>
+  <xacro:property name="joint_friction" value="0.0"/>
+  <xacro:property name="base_size" value="0.4 0.4 0.4"/>
+  <xacro:property name="inertia_ixx" value="0.0858"/>
+  <xacro:property name="inertia_izz" value="0.005"/>
+  <xacro:property name="inertia_base" value="0.25083"/>
+
+  <!-- Macros for creating links and joints -->
+  <xacro:macro name="link" params="name length radius mass inertia_ixx inertia_izz">
+    <link name="${name}">
+      <visual>
+        <origin xyz="0 0 ${length/2}" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="${length}" radius="${radius}"/>
+        </geometry>
+        <material name="${default_material}"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${length/2}" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="${length}" radius="${radius}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 ${length/2}"/>
+        <mass value="${mass}"/>
+        <inertia ixx="${inertia_ixx}" ixy="0.0" ixz="0.0" iyy="${inertia_ixx}" iyz="0.0" izz="${inertia_izz}"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="revolute_joint" params="name parent child xyz axis effort lower upper velocity damping friction">
+    <joint name="${name}" type="revolute">
+      <origin rpy="0 0 0" xyz="${xyz}"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${axis}"/>
+      <limit effort="${effort}" lower="${lower}" upper="${upper}" velocity="${velocity}"/>
+      <dynamics damping="${damping}" friction="${friction}"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="fixed_joint" params="name parent child xyz">
+    <joint name="${name}" type="fixed">
+      <origin rpy="0 0 0" xyz="${xyz}"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Define links using macros -->
+  <link name="world"/>
+  
+  <link name="rrr_base">
+    <visual>
+      <geometry>
+        <box size="${base_size}"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${base_size}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+      <mass value="${link_mass}"/>
+      <inertia ixx="${inertia_base}" ixy="0.0" ixz="0.0" iyy="${inertia_base}" iyz="0.0" izz="${link_mass}"/>
+    </inertial>
+  </link>
+
+  <xacro:link name="rrr_link1" length="${link_length}" radius="${link_radius}" mass="${link_mass}" inertia_ixx="${inertia_ixx}" inertia_izz="${inertia_izz}"/>
+  <xacro:link name="rrr_link2" length="${link_length}" radius="${link_radius}" mass="${link_mass}" inertia_ixx="${inertia_ixx}" inertia_izz="${inertia_izz}"/>
+  <xacro:link name="rrr_link3" length="${link_length}" radius="${link_radius}" mass="${link_mass}" inertia_ixx="${inertia_ixx}" inertia_izz="${inertia_izz}"/>
+
+  <link name="rrr_end_effector">
+    <visual>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <material name="${default_material}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.005"/>
+      <mass value="0.0001"/>
+      <inertia ixx="0.00005" ixy="0.0" ixz="0.0" iyy="0.00005" iyz="0.0" izz="0.00005"/>
+    </inertial>
+  </link>
+
+  <!-- Define joints using macros -->
+  <xacro:fixed_joint name="robot_to_world" parent="world" child="rrr_base" xyz="0.0 0.0 0.1"/>
+
+  <xacro:revolute_joint name="rrr_joint1" parent="rrr_base" child="rrr_link1" xyz="0 0 0.0" axis="0 0 1" effort="${effort_limit}" lower="-2.8973" upper="2.8973" velocity="${velocity_limit}" damping="${joint_damping}" friction="${joint_friction}"/>
+
+  <xacro:revolute_joint name="rrr_joint2" parent="rrr_link1" child="rrr_link2" xyz="0 0 1.1" axis="0 1 0" effort="${effort_limit}" lower="-2.8973" upper="2.8973" velocity="${velocity_limit}" damping="${joint_damping}" friction="${joint_friction}"/>
+
+  <xacro:revolute_joint name="rrr_joint3" parent="rrr_link2" child="rrr_link3" xyz="0 0 1.1" axis="0 1 0" effort="${effort_limit}" lower="-2.8973" upper="2.8973" velocity="${velocity_limit}" damping="${joint_damping}" friction="${joint_friction}"/>
+
+  <xacro:fixed_joint name="rrr_joint4" parent="rrr_link3" child="rrr_end_effector" xyz="0 0 1.2"/>
+
+</robot>

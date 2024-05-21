@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/foiegreis/ros2_fndm_ws/install/py_actions/lib/python3.10/site-packages",
+        "/home/foiegreis/ros2_fndm_ws/install/ros2_fndm_interface/lib/python3.10/site-packages",
+        "/home/foiegreis/ros2_fndm_ws/install/py_pkg/lib/python3.10/site-packages",
+        "/home/foiegreis/ros2_fndm_ws/install/cpp_py_pkg/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/foiegreis/ros2_fndm_ws/install/py_actions/lib/python3.10/site-packages",
+        "/home/foiegreis/ros2_fndm_ws/install/ros2_fndm_interface/lib/python3.10/site-packages",
+        "/home/foiegreis/ros2_fndm_ws/install/py_pkg/lib/python3.10/site-packages",
+        "/home/foiegreis/ros2_fndm_ws/install/cpp_py_pkg/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ]
+}
