@@ -1,7 +1,6 @@
 /home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ros2_sim_description//urdf/rrr.urdf
-/home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ros2_sim_description//urdf/rrr.urdf.xacro
-/home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ros2_sim_description//launch/rrr_xacro.launch.xml
 /home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ros2_sim_description//launch/rrr.launch.xml
+/home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ros2_sim_description//launch/rrr_broadcaster.launch.xml
 /home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ros2_sim_description//meshes/gripper_base.dae
 /home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ament_index/resource_index/package_run_dependencies/ros2_sim_description
 /home/foiegreis/ros2_sim_ws/install/ros2_sim_description/share/ament_index/resource_index/parent_prefix_path/ros2_sim_description

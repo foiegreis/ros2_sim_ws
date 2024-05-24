@@ -120,7 +120,7 @@
     <origin rpy="0 0 0" xyz="0 0 0.4"/>
   </joint>
 
-<!-- Base_Link1_Joint FIXED-->
+<!-- Base_Link1_Joint REVOLUTE-->
 <joint name="base_link1_joint" type="revolute">
     <parent link="base"/>
     <child link="link1"/>

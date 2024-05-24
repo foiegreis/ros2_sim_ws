@@ -1,2 +1,0 @@
-Invoking command in '/home/foiegreis/ros2_sim_ws/build/ros2_sim_description': /usr/bin/cmake --build /home/foiegreis/ros2_sim_ws/build/ros2_sim_description -- -j12 -l12
-Invoked command in '/home/foiegreis/ros2_sim_ws/build/ros2_sim_description' returned '2': /usr/bin/cmake --build /home/foiegreis/ros2_sim_ws/build/ros2_sim_description -- -j12 -l12
