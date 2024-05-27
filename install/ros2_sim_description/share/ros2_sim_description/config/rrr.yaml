@@ -1,0 +1,17 @@
+box_base:
+  length: 0.4
+  mass: 20
+
+cylinder_link:
+  radius: 0.1
+  length: 1.0
+  mass: 5
+
+sphere_link:
+  radius: 0.2
+  mass: 3
+
+gripper:
+  filename: "gripper_base.dae"
+  orientation: -1.57
+  scale: 3

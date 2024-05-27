@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="box_link" params="name pos_z">
+        <link name="${name}">
+            <visual>
+                <origin xyz="0.0 0.0 ${pos_z}" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                <box size="${box_base_length} ${box_base_length} ${box_base_length}"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+        </link>
+    </xacro:macro>
+    
+    
+    <xacro:macro name="cylinder_link" params="name pos_z">
+        <link name="${name}">
+            <visual>
+                <origin xyz="0.0 0.0 ${pos_z}" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                <cylinder radius="${cylinder_link_radius}" length="${cylinder_link_length}"/>
+                </geometry>
+                <material name="grey"/>
+            </visual>
+        </link>
+    </xacro:macro>
+    
+    
+    <xacro:macro name="sphere_link" params="name pos_z">
+        <link name="${name}">
+            <visual>
+                <origin xyz="0.0 0.0 ${pos_z}" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                <sphere radius="${sphere_link_radius}"/>
+                </geometry>
+                <material name="grey"/>
+            </visual>
+        </link>
+    </xacro:macro>
+    
+    <xacro:macro name="gripper_link" params="name filename scale pos_z rot_p">
+    <link name="${name}">
+        <visual>
+            <origin xyz="0 0 ${pos_z}" rpy="0 ${rot_p} 0"/>
+            <geometry>
+            <mesh filename="package://ros2_sim_description/meshes/${filename}" scale="${scale} ${scale} ${scale}"/>
+            </geometry>
+            <material name="grey"/>
+        </visual>
+    </link>
+    </xacro:macro>
+    
+</robot>

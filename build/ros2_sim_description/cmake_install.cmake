@@ -47,6 +47,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/foiegreis/ros2_sim_ws/src/ros2_sim_description/urdf"
     "/home/foiegreis/ros2_sim_ws/src/ros2_sim_description/launch"
     "/home/foiegreis/ros2_sim_ws/src/ros2_sim_description/meshes"
+    "/home/foiegreis/ros2_sim_ws/src/ros2_sim_description/rviz"
+    "/home/foiegreis/ros2_sim_ws/src/ros2_sim_description/config"
     )
 endif()
 

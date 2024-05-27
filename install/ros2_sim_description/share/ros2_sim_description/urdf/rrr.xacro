@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot name="rrr_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- Load the YAML file -->
+<xacro:property name="yaml_file" value="$(find ros2_sim_description)/config/rrr.yaml"/>
+<xacro:property name="robot_measures" value="${xacro.load_yaml(yaml_file)}"/>
+
+
+<!-- Include xacro files-->
+<xacro:include filename="common_properties.xacro" />
+<xacro:include filename="rrr_macro.xacro" />
+
+<!-- Properties -->
+<xacro:property name="box_base_length" value="${robot_measures['box_base']['length']}"/>
+
+<xacro:property name="cylinder_link_length" value="${robot_measures['cylinder_link']['length']}"/>
+<xacro:property name="cylinder_link_radius" value="${robot_measures['cylinder_link']['radius']}"/>
+<xacro:property name="sphere_link_radius" value="${robot_measures['sphere_link']['radius']}"/>
+
+<xacro:property name="gripper_filename" value="${robot_measures['gripper']['filename']}"/>
+<xacro:property name="gripper_orientation" value="${robot_measures['gripper']['orientation']}"/>
+<xacro:property name="gripper_scale" value="${robot_measures['gripper']['scale']}"/>
+
+<xacro:property name="offset_cylinder" value="0.5"/>
+<xacro:property name="offset_sphere" value="0.05"/>
+
+
+<!-- ================================= -->
+<!-- |  INERTIAL PROPERTIES - LINKS  | -->
+<!-- ================================= -->
+
+<!-- World link -->
+<link name="world"/>
+
+<!-- Base Link -->
+<xacro:box_link name="base" pos_z="-0.2" /> 
+
+<!-- Link1 -->
+<xacro:cylinder_link name="link1" pos_z="${box_base_length}" />
+
+<!-- sphere1-->
+<xacro:sphere_link name="sphere1" pos_z="0.0" />
+
+<!-- Link2-->
+<xacro:cylinder_link name="link2" pos_z="${offset_cylinder}" /> 
+
+<!-- sphere2-->
+<xacro:sphere_link name="sphere2" pos_z="0.0" />
+
+<!-- Link3-->
+<xacro:cylinder_link name="link3" pos_z="${offset_cylinder}" /> 
+
+<!-- Gripper Link-->
+<xacro:gripper_link name="gripper" filename="${gripper_filename}" scale="${gripper_scale}" pos_z="0.0" rot_p="${gripper_orientation}"/>
+
+
+<!-- ================================= -->
+<!-- | KINEMATIC PROPERTIES - JOINTS | -->
+<!-- ================================= -->
+
+<!-- World_Base_Joint -->
+<xacro:fixed_joint name="base_to_world" parent="world" child="base" pos_z="${box_base_length}"/>
+
+<!-- Base_Link1_Joint REVOLUTE-->
+<xacro:revolute_joint name="base_link1_joint" parent="base" child="link1" axis="z" pos_z="0.0"/>
+
+<!-- Link1_sphere1_Joint REVOLUTE-->
+<xacro:revolute_joint name="link1_sphere1_joint" parent="link1" child="sphere1" axis="y" pos_z="${cylinder_link_length + offset_sphere}"/> 
+
+<!-- Sphere1_Link2_Joint FIXED-->
+<xacro:fixed_joint name="sphere1_link2_joint" parent="sphere1" child="link2" pos_z="${sphere_link_radius - offset_sphere}"/> 
+
+<!-- Link2_sphere2_Joint REVOLUTE-->
+<xacro:revolute_joint name="link2_sphere2_joint" parent="link2" child="sphere2" axis="y" pos_z="${cylinder_link_length + offset_sphere}"/> 
+
+<!-- Sphere2_Link3_Joint FIXED-->
+<xacro:fixed_joint name="sphere2_link3_joint" parent="sphere2" child="link3" pos_z="${sphere_link_radius - offset_sphere}"/>  
+
+<!-- Link3_Grippe_Joint FIXED-->
+<xacro:fixed_joint name="link3_gripper_joint" parent="link3" child="gripper" pos_z="${cylinder_link_length}"/>
+
+  
+<xacro:property name="print_posz_cylinder" value="${cylinder_link_length + offset_z}"/> <!-- This will print the value of val1 -->
+
+</robot>

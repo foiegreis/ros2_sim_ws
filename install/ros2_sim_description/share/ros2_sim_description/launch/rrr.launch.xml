@@ -2,6 +2,9 @@
     <let name="urdf_path"
         value = "$(find-pkg-share ros2_sim_description)/urdf/rrr.urdf"/>
     
+    <let name="rviz_config_path"
+        value = "$(find-pkg-share ros2_sim_description)/rviz/config.rviz"/>
+    
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
                value="$(command 'xacro $(var urdf_path)')"/>
@@ -9,6 +12,7 @@
 
     <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/>
 
-    <node pkg="rviz2" exec="rviz2" output="screen"/>
+    <node pkg="rviz2" exec="rviz2" output="screen"
+        args="-d $(var rviz_config_path)" />
 
 </launch>

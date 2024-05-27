@@ -1,0 +1,23 @@
+[ 50%] Built target tf_broadcaster_node
+[ 66%] Built target tf_publisher_node
+[100%] Built target tf_listener_node
+-- Install configuration: ""
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/lib/ros2_sim_tf/tf_publisher_node
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/lib/ros2_sim_tf/tf_listener_node
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/lib/ros2_sim_tf/tf_broadcaster_node
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ament_index/resource_index/package_run_dependencies/ros2_sim_tf
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ament_index/resource_index/parent_prefix_path/ros2_sim_tf
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/ament_prefix_path.sh
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/path.sh
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/path.dsv
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.bash
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.sh
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.zsh
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.dsv
+-- Installing: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/package.dsv
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ament_index/resource_index/packages/ros2_sim_tf
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/cmake/ros2_sim_tfConfig.cmake
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/cmake/ros2_sim_tfConfig-version.cmake
+-- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/package.xml

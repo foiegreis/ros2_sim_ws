@@ -1,0 +1,27 @@
+[0.020s] Invoking command in '/home/foiegreis/ros2_sim_ws/build/ros2_sim_tf': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/foiegreis/ros2_fndm_ws/install/py_actions:/home/foiegreis/ros2_fndm_ws/install/py_pkg:/opt/ros/iron /usr/bin/cmake --build /home/foiegreis/ros2_sim_ws/build/ros2_sim_tf -- -j12 -l12
+[0.078s] [ 83%] Built target tf_publisher_node
+[0.078s] [100%] Built target tf_listener_node
+[0.078s] [100%] Built target tf_broadcaster_node
+[0.096s] Invoked command in '/home/foiegreis/ros2_sim_ws/build/ros2_sim_tf' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/foiegreis/ros2_fndm_ws/install/py_actions:/home/foiegreis/ros2_fndm_ws/install/py_pkg:/opt/ros/iron /usr/bin/cmake --build /home/foiegreis/ros2_sim_ws/build/ros2_sim_tf -- -j12 -l12
+[0.146s] Invoking command in '/home/foiegreis/ros2_sim_ws/build/ros2_sim_tf': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/foiegreis/ros2_fndm_ws/install/py_actions:/home/foiegreis/ros2_fndm_ws/install/py_pkg:/opt/ros/iron /usr/bin/cmake --install /home/foiegreis/ros2_sim_ws/build/ros2_sim_tf
+[0.147s] -- Install configuration: ""
+[0.147s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/lib/ros2_sim_tf/tf_publisher_node
+[0.147s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/lib/ros2_sim_tf/tf_listener_node
+[0.147s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/lib/ros2_sim_tf/tf_broadcaster_node
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ament_index/resource_index/package_run_dependencies/ros2_sim_tf
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ament_index/resource_index/parent_prefix_path/ros2_sim_tf
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/ament_prefix_path.sh
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/ament_prefix_path.dsv
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/path.sh
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/environment/path.dsv
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.bash
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.sh
+[0.148s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.zsh
+[0.149s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/local_setup.dsv
+[0.149s] -- Installing: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/package.dsv
+[0.149s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ament_index/resource_index/packages/ros2_sim_tf
+[0.149s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.149s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/cmake/ros2_sim_tfConfig.cmake
+[0.149s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/cmake/ros2_sim_tfConfig-version.cmake
+[0.149s] -- Up-to-date: /home/foiegreis/ros2_sim_ws/install/ros2_sim_tf/share/ros2_sim_tf/package.xml
+[0.151s] Invoked command in '/home/foiegreis/ros2_sim_ws/build/ros2_sim_tf' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/foiegreis/ros2_fndm_ws/install/py_actions:/home/foiegreis/ros2_fndm_ws/install/py_pkg:/opt/ros/iron /usr/bin/cmake --install /home/foiegreis/ros2_sim_ws/build/ros2_sim_tf
